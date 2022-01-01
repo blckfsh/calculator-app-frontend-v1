@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+/* ------------------------
+Fonts
+------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* ------------------------
+Variables
+------------------------ */
+:root {
+  --white: rgba(255, 255, 255, 255);
+  --silver: rgba(189, 195, 199, 0.5);
+  --gray: rgba(236, 240, 241, 1.0);
+  --light-dark: rgba(0, 0, 0, 0.2);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ------------------------
+Fonts
+------------------------ */
+* {
+  font-family: 'Poppins';
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  overflow: hidden;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ------------------------
+Container
+------------------------ */
+.container-fluid {
+  height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+}
+/* ------------------------
+Calculator
+------------------------ */
+.calculator {
+  width: 500px;
+  border: 1px solid var(--light-dark);
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.calc-header {
+  padding: 10px;
+  height: 60px;
+  background: var(--gray);
+  border-bottom: 1px solid var(--light-dark);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calc-result {
+  font-size: 2.5rem;
+}
+
+.calc-body {
+  /* Add style here */
+}
+
+.calc-keypad {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.calc-keypad button {
+  flex: 1 100 25%;
+  height: 60px;
+  font-size: 1.3rem;
+  border: none;
+  background: var(--white);
+  border-right: 1px solid var(--light-dark);
+  border-bottom: 1px solid var(--light-dark);
+  transition: 0.5s all ease-in-out;
+  cursor: pointer;
+}
+
+.calc-keypad button:hover {
+  background: var(--silver);
+}
+
+.calc-keypad button:nth-child(17) {
+  flex: 1 100 50%;
+}
+
+.calc-keypad button:nth-child(17),
+.calc-keypad button:nth-child(18),
+.calc-keypad button:nth-child(19),
+.calc-keypad button:nth-child(20) {
+  border-bottom: none;
+}
+
+.calc-keypad button:nth-child(4),
+.calc-keypad button:nth-child(8),
+.calc-keypad button:nth-child(12),
+.calc-keypad button:nth-child(16),
+.calc-keypad button:nth-child(19) {
+  border-right: none;
+}
+
+.calc-keypad button:nth-child(17) {
+  border-bottom-left-radius: 10px;
+}
+
+.calc-keypad button:nth-child(19) {
+  border-bottom-right-radius: 10px;
 }
